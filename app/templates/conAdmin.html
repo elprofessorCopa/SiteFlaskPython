@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - login &amp; signup form</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='Style/styleLog.css')}}">
+ 
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">Login Form</div>
+  </div>
+  <div class="form-container">
+    <div class="slide-controls">
+      <input type="radio" name="slide" id="login" checked>
+
+      <label for="login" class="slide login">Admin Login</label>
+
+      <div class="slider-tab"></div>
+    </div>
+    <div class="form-inner">
+      <form action="" class="login" method = "post">
+        {{ admin_form.hidden_tag() }}
+        <div class="field">
+          {{ admin_form.email(class="input-text") }}
+        </div>
+        <div class="field">
+          {{ admin_form.password(class="input-text") }}
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          {{ admin_form.submit}}
+        </div>
+      </form>
+    
+    </div>
+  </div>
+</div>
+<div class="container">
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          <div class="alert alert-info" role="alert">
+              <ul>
+                  {% for message in messages %}
+                      <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          </div>
+      {% endif %}
+  {% endwith %}
+</div>
+<!-- partial -->
+  <script  src="{{url_for('static',filename='Scripts/scriptLog.js')}}"></script>
+  
+
+</body>
+</html>

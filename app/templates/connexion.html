@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8">
+  <title>Travel - login &amp; signup form</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='Style/styleLog.css')}}">
+ 
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">Login Form</div>
+    <div class="title signup">Signup Form</div>
+  </div>
+  <div class="form-container">
+    <div class="slide-controls">
+      <input type="radio" name="slide" id="signup" checked>
+      <input type="radio" name="slide" id="login">
+      <label for="login" class="slide login">Login</label>
+      <label for="signup" class="slide signup">Signup</label>
+      <div class="slider-tab"></div>
+    </div>
+    <div class="form-inner">
+      <form action="" class="login" method = "post">
+        {{ login_form.hidden_tag() }}
+        <div class="field">
+          {{ login_form.email(class="input-text") }}
+        </div>
+        <div class="field">
+          {{ login_form.password(class="input-text") }}
+        </div>
+        <div class="pass-link"><a href="/connectAdmin">Are you Admin ?</a></div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          {{ login_form.submit}}
+        </div>
+        <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+      </form>
+      <form action="" class="signup" method="POST">
+        {{ signup_form.hidden_tag() }}
+        <div class="field">
+          {{ signup_form.nom(class="input-text") }}
+        </div>
+        <div class="field">
+          {{ signup_form.prenom(class="input-text") }}
+        </div>
+        <div class="field">
+            {{ signup_form.email(class="input-text") }}
+        
+          </div>
+       
+        <div class="field">
+          {{ signup_form.password(class="input-text", id="password") }}
+
+        </div>
+        <div class="field">
+          {{ signup_form.confirm_password(class="input-text") }}
+        </div>
+       
+        <div class="field btn">
+            <div class="btn-layer"></div>
+            {{ signup_form.submit}}
+        </div>
+    </form>
+    
+    </div>
+  </div>
+</div>
+<div class="container">
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          <div class="alert alert-info" role="alert">
+              <ul>
+                  {% for message in messages %}
+                      <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          </div>
+      {% endif %}
+  {% endwith %}
+
+  {% if signup_form.email.errors %}
+<ul class="errors">
+  {% for error in signup_form.email.errors %}
+    <li>{{ error }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+
+{% if signup_form.password.errors %}
+<ul class="errors">
+    {% for error in signup_form.password.errors %}
+        <li>{{ error }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if signup_form.confirm_password.errors %}
+<ul class="errors">
+    {% for error in signup_form.confirm_password.errors %}
+        <li>{{ error }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</div>
+<!-- partial -->
+  <script  src="{{url_for('static',filename='Scripts/scriptLog.js')}}"></script>
+  
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Reset some default styling */
+body, html, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.input-text {
+    width: 30%;
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="checkbox"] {
+    width: 30%;
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-submit {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 15px; /* Adjusted padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-submit:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.custom-textarea {
+    width: 50%;
+    height: 150px; 
+    box-sizing: border-box; /* la taille inclut le remplissage et la bordure */
+}
+
+
+  

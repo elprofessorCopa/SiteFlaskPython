@@ -1,0 +1,131 @@
+/* Style pour la liste des réservations */
+.reservations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reservation-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.reservation-item:hover {
+    transform: translateY(-5px);
+}
+
+.reservation-item p {
+    margin: 5px 0;
+}
+
+.reservation-item img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.reservation-item button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-item button:hover {
+    background-color: #45a049;
+}
+
+/* Style pour les inputs */
+.reservation-item input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reservation-item input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reservation-item select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Animation pour le titre des réservations */
+.titre-reservation {
+    font-size: 24px;
+    color: #333;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Animation pour le prix total */
+.prix-total {
+    font-size: 18px;
+    color: #666;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Animation pour le titre des réservations */
+.titre-reservation {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Animation pour le prix total */
+.prix-total {
+    font-size: 18px;
+    color: #666;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Au survol */
+/* Au survol */
+.titre-reservation:hover,
+.prix-total:hover {
+    color: #ff5733; /* Nouvelle couleur au survol */
+    transform: translateX(10px); /* Déplacer le texte de 10 pixels vers la droite */
+}
